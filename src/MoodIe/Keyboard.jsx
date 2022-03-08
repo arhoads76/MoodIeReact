@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'underscore';
 import { $log, css, preventDefault } from '../helpers/dom-helpers';
+import { LetterClues } from './GameState';
 
 const keyboardKeys = [
 	["Q","W","E","R","T","Y","U","I","O","P"],
@@ -10,7 +11,6 @@ const keyboardKeys = [
 
 export default function Keyboard(props) {
 	var lettersUsed	= props.lettersUsed;
-	var LetterClues = props.LetterClues;
 
 	React.useEffect(() => {
 		document.addEventListener('keydown', onKeyDown);
@@ -53,7 +53,6 @@ export default function Keyboard(props) {
 			props.onKeyPress(key);
 	}
 	function isLetterStatus(letter, status) {
-		//$log.log('isLetterStatus: ' + letter + ' / ' + status + ' = ' + lettersUsed[letter.toLowerCase()]);
 		return lettersUsed[letter.toLowerCase()] == status;
 	}
 

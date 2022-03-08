@@ -3,14 +3,12 @@ import { useGameState } from './GameState';
 import GameBoard from './GameBoard';
 import Keyboard from './Keyboard';
 import Toolbar from './Toolbar';
+import { GameStates } from './GameState';
 import { $log, css } from '../helpers/dom-helpers';
 
 export default function App() {
-	const game = useGameState();
-
-	var gameState	= game.state.gameState;
-	var GameStates	= game.GameStates;
-	var LetterClues	= game.LetterClues;
+	const game		= useGameState();
+	const gameState	= game.state.gameState;
 
 	function onKeyPress(key) {
 		game.onKeyPress(key);
@@ -21,7 +19,7 @@ export default function App() {
 			<div className="content">
 				<Toolbar />
 				<GameBoard game={game} />
-				<Keyboard disabled={gameState == GameStates.Scoring} lettersUsed={game.state.lettersUsed} LetterClues={LetterClues} onKeyPress={onKeyPress} />
+				<Keyboard disabled={gameState == GameStates.Scoring || gameState == GameStates.Finished} lettersUsed={game.state.lettersUsed} onKeyPress={onKeyPress} />
 			</div>
 		</div>
 	)

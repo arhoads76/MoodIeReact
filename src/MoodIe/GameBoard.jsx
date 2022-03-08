@@ -1,12 +1,13 @@
 import React from 'react';
 import _ from 'underscore';
 import { $log, css } from '../helpers/dom-helpers';
+import { GameStates, RowStates, LetterClues, MaxGuesses } from './GameState';
 
 function makeBoardRows(game) {
 	var boardRows	= [];
 	var state		= game.state;
 
-	for (var i = 0; i < game.MaxGuesses; i++) {
+	for (var i = 0; i < MaxGuesses; i++) {
 		if (i < state.activeRow) {
 			var row = [];
 			for (var j = 0; j < state.wordLength; j++)
@@ -43,11 +44,7 @@ export default function GameBoard(props) {
 
 	var game		= props.game;
 	var boardRows	= makeBoardRows(game);
-
 	var gameState	= game.state.gameState;
-	var GameStates	= game.GameStates;
-	var RowStates	= game.RowStates;
-	var LetterClues	= game.LetterClues;
 
 	React.useEffect(() => {
 		if (gameState == GameStates.Scoring) {

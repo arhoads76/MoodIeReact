@@ -4,26 +4,26 @@ import dictionary from './dictionary';
 import { encode, decode} from './base64';
 import { $log, css, getQueryString } from '../helpers/dom-helpers';
 
-const GameStates = {
+export const GameStates = {
 	Guessing: 0,
 	Scoring: 1,
 	Finished: 2,
 }
 
-const RowStates = {
+export const RowStates = {
 	Editing: 0,
 	Pending: 1,
 	Locked: 2,
 }
 
-const LetterClues = {
+export const LetterClues = {
 	Editing: 0,
 	Absent: 1,
 	Elsewhere: 2,
 	Correct: 3,
 }
 
-const MaxGuesses = 6;
+export const MaxGuesses = 6;
 
 export function useGameState() {
 	const [state, dispatch] = React.useReducer(gameStateReducer, 5, makeInitialGameState);
@@ -48,11 +48,6 @@ export function useGameState() {
 		onKeyPress,
 		onScoringCompleted,
 		onWordLengthChanged,
-
-		LetterClues,
-		RowStates,
-		GameStates,
-		MaxGuesses,
 	}
 }
 
@@ -179,8 +174,6 @@ export function gameStateReducer(state, action) {
 
 		var lettersUsed	= updateLettersUsed(state.lettersUsed, row);
 		var isCorrect	= _.all(row.letters, l => l.clue == LetterClues.Correct);
-
-		$log.log('lettersUsed: ', lettersUsed);
 
 		var newState = {...state, rows, lettersUsed, gameState:GameStates.Scoring, isCorrect };
 		return newState;
