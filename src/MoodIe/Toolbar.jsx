@@ -6,7 +6,7 @@ export default function Toolbar() {
 	return (
 		<div className="toolbar">
 			<i className="fa fa-moon" />
-			<h2>MoodIe</h2>
+			<h2>MoodIe React</h2>
 		</div>
 	)
 }

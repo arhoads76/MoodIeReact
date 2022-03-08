@@ -54,7 +54,7 @@ export default function GameBoard(props) {
 	}, [gameState]);
 
 	function updateAnimatedLetter() {
-		if (animateLetterRef.current < game.state.wordLength) {
+		if (false) { //animateLetterRef.current < game.state.wordLength) {
 			setAnimateLetter(x => x+1);
 		} else {
 			setAnimateLetter(-1);
@@ -90,6 +90,12 @@ export default function GameBoard(props) {
 					</div>
 				)
 			})}
+
+			{game.state.gameState == GameStates.Finished && !game.state.isCorrect &&
+				<div className="answer">
+					The word was: {game.state.secretWord.toUpperCase()}
+				</div>
+			}
 		</div>
 	)
 }
