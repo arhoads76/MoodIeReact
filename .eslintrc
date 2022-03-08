@@ -1,0 +1,34 @@
+{
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2018,
+	},
+	"extends": [
+		//"eslint:recommended",
+		"plugin:react/recommended"
+	],
+	"env": {
+		"browser": true,
+	},
+	"globals": {
+		"Promise": "readable",
+		"$": "readable",
+		"kendo": "readable",
+	},
+	"rules": {
+		"no-undef": "error",
+		"react/display-name": 0,
+		"react/no-children-prop": 0,
+		"react/prop-types": 0,
+		"react/style-prop-object": "error",
+	},
+	"plugins": [
+		"react"
+	],
+	"settings": {
+		"react": {
+			"version": "16.0"
+		}
+	}
+}
