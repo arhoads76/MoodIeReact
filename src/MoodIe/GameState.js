@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'underscore';
-import dictionary from './dictionary';
+import { dictionary } from './dictionary';
 import { encode, decode} from './base64';
 import { $log, css, getQueryString } from '../helpers/dom-helpers';
 
@@ -109,6 +109,9 @@ export function gameStateReducer(state, action) {
 
 	function addLetter(state, letter) {
 		var row = state.rows[state.activeRow];
+		if (row.letters.length == state.wordLength)
+			return state;
+
 		row = {...row, letters:[...row.letters]}
 
 		row.letters.push({ value:letter, clue:LetterClues.Editing });

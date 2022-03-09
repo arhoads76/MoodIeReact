@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'underscore';
 import { $log, css } from '../helpers/dom-helpers';
 import { GameStates, RowStates, LetterClues, MaxGuesses } from './GameState';
+import Cell from './Cell';
 
 function makeBoardRows(game) {
 	var boardRows	= [];
@@ -48,13 +49,13 @@ export default function GameBoard(props) {
 
 	React.useEffect(() => {
 		if (gameState == GameStates.Scoring) {
-			setAnimateLetter(0);
-			animationTimer.current = setInterval(updateAnimatedLetter, 500);
+			setAnimateLetter(-1);
+			animationTimer.current = setInterval(updateAnimatedLetter, 800);
 		}
 	}, [gameState]);
 
 	function updateAnimatedLetter() {
-		if (false) { //animateLetterRef.current < game.state.wordLength) {
+		if (animateLetterRef.current < game.state.wordLength) {
 			setAnimateLetter(x => x+1);
 		} else {
 			setAnimateLetter(-1);
@@ -78,15 +79,20 @@ export default function GameBoard(props) {
 
 				return (
 					<div key={i} className={css("guess", { 'invalidWord':invalidWord })}>
-						{_.map(row, (letter,j) => (
-							<div key={j} className={css("letter", {
-														'animate':j == animateLetter,
-														'correct':(rowState == RowStates.Locked || rowState == RowStates.Pending) && letter.clue == LetterClues.Correct,
-														'elsewhere':(rowState == RowStates.Locked || rowState == RowStates.Pending) && letter.clue == LetterClues.Elsewhere,
-														'absent':(rowState == RowStates.Locked || rowState == RowStates.Pending) && letter.clue == LetterClues.Absent })}>
-								<span>{(letter.value || '').toUpperCase()}</span>
-							</div>
-						))}
+						{_.map(row, (letter,j) => {
+							var animate = isActiveRow && j <= animateLetterRef.current;
+
+							return (
+								<Cell key={j}
+										flip={isActiveRow && rowState == RowStates.Pending}
+										animate={animate}
+										correct={letter.clue == LetterClues.Correct}
+										elsewhere={letter.clue == LetterClues.Elsewhere}
+										absent={letter.clue == LetterClues.Absent}
+										letter={letter}
+									/>
+							)
+						})}
 					</div>
 				)
 			})}

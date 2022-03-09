@@ -45,7 +45,9 @@
       "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/dictionary.js": "./src/MoodIe/dictionary.js",
       "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/Toolbar.jsx": "./src/MoodIe/Toolbar.jsx",
       "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/dictionary-nyt.js": "./src/MoodIe/dictionary-nyt.js",
-      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/index.js bd48d91b2f1e16c5b8b0bbf81ab2c958": 5
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/index.js bd48d91b2f1e16c5b8b0bbf81ab2c958": 5,
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/Cell.jsx": "./src/MoodIe/Cell.jsx",
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/index.js 1c1e8ad0064e62b6e7e1cc0ae069a7dc": 5
     },
     "usedIds": {
       "0": 0,
@@ -89,7 +91,8 @@
       "./src/MoodIe/base64.js": "./src/MoodIe/base64.js",
       "./src/MoodIe/dictionary.js": "./src/MoodIe/dictionary.js",
       "./src/MoodIe/Toolbar.jsx": "./src/MoodIe/Toolbar.jsx",
-      "./src/MoodIe/dictionary-nyt.js": "./src/MoodIe/dictionary-nyt.js"
+      "./src/MoodIe/dictionary-nyt.js": "./src/MoodIe/dictionary-nyt.js",
+      "./src/MoodIe/Cell.jsx": "./src/MoodIe/Cell.jsx"
     }
   },
   "chunks": {
