@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'underscore';
-import { dictionary } from './dictionary';
+import { gameWords, validWords } from './dictionary';
 import { encode, decode} from './base64';
 import { $log, css, getQueryString } from '../helpers/dom-helpers';
 
@@ -77,7 +77,7 @@ function pickSecretWord(wordLength) {
 	if (queryString.challenge) {
 		word = decode(queryString.challenge);
 	} else {
-		var validWords	= _.filter(dictionary, word => (word.length == wordLength && word[0] != '*'));
+		var validWords	= _.filter(gameWords, word => (word.length == wordLength && word[0] != '*'));
 		var randomValue	= queryString.seed ? mulberry32(Number(queryString.seed)) : Math.random();
 
 		word = validWords[Math.floor(validWords.length * randomValue)];
@@ -93,7 +93,8 @@ function mulberry32(seed) {
 }
 function isValidWord(letters) {
 	var test 	= _.map(letters, letter => letter.value).join('');
-	var found 	= _.find(dictionary, word => test == word);
+	var found 	= _.find(gameWords, word => test == word)
+					|| _.find(validWords, word => test == word);
 
 	return !!found;
 }
