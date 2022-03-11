@@ -10,6 +10,10 @@ export default function App() {
 	const game		= useGameState();
 	const gameState	= game.state.gameState;
 
+	function onKeyPress(key) {
+		game.onKeyPress(key);
+	}
+
 	return (
 		<div className="appRoot">
 			<div className="content">
