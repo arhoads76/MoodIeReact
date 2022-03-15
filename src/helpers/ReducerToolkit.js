@@ -210,12 +210,18 @@ export function buildReducer(spec) {
 			action.type = actionName;
 		}
 
-		if (caseReducers[actionName])
-			return caseReducers[actionName](state, action);
-		else if (state)
+		if (caseReducers[actionName]) {
+			if (spec.useActionPayload && action.payload && Array.isArray(action.payload))
+				return caseReducers[actionName](state, ...action.payload);
+			else if (spec.useActionPayload && action.payload)
+				return caseReducers[actionName](state, action.payload);
+			else
+				return caseReducers[actionName](state, action);
+		} else if (state) {
 			return state;
-		else 
+		} else  {
 			return (typeof spec.initialState == 'function' ? spec.initialState() : {...(spec.initialState || {})});
+		}
 	}
 
 	return {
