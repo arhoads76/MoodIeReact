@@ -1,9 +1,8 @@
 import React from 'react';
-import { useGameState } from './GameState';
+import { useGameState, GameStates } from './GameState';
 import GameBoard from './GameBoard';
 import Keyboard from './Keyboard';
 import Toolbar from './Toolbar';
-import { GameStates } from './GameState';
 import { $log, css } from '../helpers/dom-helpers';
 
 export default function App() {

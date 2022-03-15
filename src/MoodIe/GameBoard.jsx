@@ -97,10 +97,16 @@ export default function GameBoard(props) {
 				)
 			})}
 
-			{game.state.gameState == GameStates.Finished && !game.state.isCorrect &&
-				<div className="answer">
-					The word was: {game.state.secretWord.toUpperCase()}
-				</div>
+			{game.state.gameState == GameStates.Finished &&
+				(game.state.isCorrect ?
+					<div className="answer">
+						Success!
+					</div>
+				:
+					<div className="answer">
+						The word was: {game.state.secretWord.toUpperCase()}
+					</div>
+				)
 			}
 		</div>
 	)
