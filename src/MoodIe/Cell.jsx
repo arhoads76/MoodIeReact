@@ -1,7 +1,5 @@
 import React from 'react';
-import _ from 'underscore';
-import { $log, css, preventDefault } from '../helpers/dom-helpers';
-import { LetterClues } from './GameState';
+import { $log, css } from '../helpers/dom-helpers';
 
 export default function Cell(props) {
 	return (
