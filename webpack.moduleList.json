@@ -47,7 +47,19 @@
       "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/dictionary-nyt.js": "./src/MoodIe/dictionary-nyt.js",
       "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/index.js bd48d91b2f1e16c5b8b0bbf81ab2c958": 5,
       "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/Cell.jsx": "./src/MoodIe/Cell.jsx",
-      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/index.js 1c1e8ad0064e62b6e7e1cc0ae069a7dc": 5
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/index.js 1c1e8ad0064e62b6e7e1cc0ae069a7dc": 5,
+      "node_modules/@babel/runtime/helpers/esm/defineProperty.js": "./node_modules/@babel/runtime/helpers/esm/defineProperty.js",
+      "node_modules/@babel/runtime/helpers/esm/objectSpread2.js": "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js",
+      "node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js": "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js",
+      "node_modules/immer/dist/immer.esm.js": "./node_modules/immer/dist/immer.esm.js",
+      "node_modules/redux-thunk/es/index.js": "./node_modules/redux-thunk/es/index.js",
+      "node_modules/redux/es/redux.js": "./node_modules/redux/es/redux.js",
+      "node_modules/reselect/es/defaultMemoize.js": "./node_modules/reselect/es/defaultMemoize.js",
+      "node_modules/reselect/es/index.js": "./node_modules/reselect/es/index.js",
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/helpers/createSlice.js": "./src/helpers/createSlice.js",
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/helpers/useReducerTools.js": "./src/helpers/useReducerTools.js",
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/helpers/ReducerToolkit.js": "./src/helpers/ReducerToolkit.js",
+      "node_modules/buble-loader/index.js??ref--4!node_modules/eslint-loader/index.js??ref--5!src/MoodIe/index.js ff152abea4c6069199fbfe2245e33df1": 5
     },
     "usedIds": {
       "0": 0,
@@ -92,7 +104,18 @@
       "./src/MoodIe/dictionary.js": "./src/MoodIe/dictionary.js",
       "./src/MoodIe/Toolbar.jsx": "./src/MoodIe/Toolbar.jsx",
       "./src/MoodIe/dictionary-nyt.js": "./src/MoodIe/dictionary-nyt.js",
-      "./src/MoodIe/Cell.jsx": "./src/MoodIe/Cell.jsx"
+      "./src/MoodIe/Cell.jsx": "./src/MoodIe/Cell.jsx",
+      "./node_modules/@babel/runtime/helpers/esm/defineProperty.js": "./node_modules/@babel/runtime/helpers/esm/defineProperty.js",
+      "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js": "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js",
+      "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js": "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js",
+      "./node_modules/immer/dist/immer.esm.js": "./node_modules/immer/dist/immer.esm.js",
+      "./node_modules/redux-thunk/es/index.js": "./node_modules/redux-thunk/es/index.js",
+      "./node_modules/redux/es/redux.js": "./node_modules/redux/es/redux.js",
+      "./node_modules/reselect/es/defaultMemoize.js": "./node_modules/reselect/es/defaultMemoize.js",
+      "./node_modules/reselect/es/index.js": "./node_modules/reselect/es/index.js",
+      "./src/helpers/createSlice.js": "./src/helpers/createSlice.js",
+      "./src/helpers/useReducerTools.js": "./src/helpers/useReducerTools.js",
+      "./src/helpers/ReducerToolkit.js": "./src/helpers/ReducerToolkit.js"
     }
   },
   "chunks": {
@@ -103,8 +126,8 @@
     },
     "bySource": {},
     "usedIds": [
-      0,
-      "MoodIe"
+      "MoodIe",
+      0
     ]
   }
 }
